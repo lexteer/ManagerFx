@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="307.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.managerfx.controllers.NewTaskController">
+   <children>
+      <Button fx:id="saveTaskBtn" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="340.0" mnemonicParsing="false" onAction="#saveTask" prefHeight="26.0" prefWidth="57.0" text="Save" textAlignment="CENTER" />
+      <TextField fx:id="taskNameField" layoutX="78.0" layoutY="50.0" prefHeight="26.0" prefWidth="150.0" promptText="Name your task" />
+      <ComboBox fx:id="prioField" layoutX="79.0" layoutY="187.0" prefWidth="150.0" promptText="Select priority" />
+      <DatePicker fx:id="deadlinePicker" layoutX="66.0" layoutY="227.0" promptText="Pick a deadline" />
+      <ComboBox fx:id="cateField" layoutX="82.0" layoutY="270.0" prefWidth="150.0" promptText="Select category" />
+      <TextArea fx:id="descriptionField" layoutX="78.0" layoutY="86.0" prefHeight="90.0" prefWidth="150.0" promptText="Description" />
+   </children>
+</AnchorPane>

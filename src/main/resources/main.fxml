@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.managerfx.controllers.MainController">
+   <children>
+      <Label fx:id="titleLabel" layoutX="54.0" layoutY="27.0" prefHeight="46.0" prefWidth="270.0" text="Task Managment">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <TableView fx:id="taskTable" editable="true" layoutX="54.0" layoutY="176.0" pickOnBounds="false" prefHeight="200.0" prefWidth="486.0" style="-fx-background-color: #133a52; -fx-color: #ffffff;">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="226.79998016357422" text="Task" />
+          <TableColumn fx:id="priorityColumn" prefWidth="86.79998779296875" text="Priority" />
+            <TableColumn fx:id="deadlineColumn" prefWidth="85.0" text="Deadline" />
+            <TableColumn fx:id="categoryColumn" prefWidth="85.59995117187498" text="Category" />
+        </columns>
+      </TableView>
+      <Button fx:id="newTaskBtn" layoutX="54.0" layoutY="126.0" mnemonicParsing="false" onAction="#newTaskInit" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #1c87b0;" text="New Task" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font></Button>
+   </children>
+</AnchorPane>
