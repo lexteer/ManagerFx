@@ -11,17 +11,22 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="taskTable" editable="true" layoutX="54.0" layoutY="176.0" pickOnBounds="false" prefHeight="200.0" prefWidth="486.0" style="-fx-background-color: #133a52; -fx-color: #ffffff;">
+      <TableView fx:id="taskTable" editable="true" layoutX="54.0" layoutY="176.0" prefHeight="200.0" prefWidth="486.0">
         <columns>
-          <TableColumn fx:id="nameColumn" prefWidth="226.79998016357422" text="Task" />
-          <TableColumn fx:id="priorityColumn" prefWidth="86.79998779296875" text="Priority" />
-            <TableColumn fx:id="deadlineColumn" prefWidth="85.0" text="Deadline" />
-            <TableColumn fx:id="categoryColumn" prefWidth="85.59995117187498" text="Category" />
+          <TableColumn fx:id="nameColumn" prefWidth="197.20001602172852" text="Task" />
+          <TableColumn fx:id="priorityColumn" prefWidth="80.39994812011719" text="Priority" />
+            <TableColumn fx:id="deadlineColumn" prefWidth="101.4000244140625" text="Deadline" />
+            <TableColumn fx:id="categoryColumn" prefWidth="114.5999755859375" text="Category" />
         </columns>
       </TableView>
       <Button fx:id="newTaskBtn" layoutX="54.0" layoutY="126.0" mnemonicParsing="false" onAction="#newTaskInit" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #1c87b0;" text="New Task" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri" size="14.0" />
          </font></Button>
+      <Button fx:id="deleteBtn" layoutX="176.0" layoutY="129.0" mnemonicParsing="false" onAction="#deleteTasks" prefHeight="4.0" prefWidth="51.0" text="Delete">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

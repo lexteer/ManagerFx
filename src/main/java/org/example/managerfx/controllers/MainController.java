@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Modality;
@@ -29,12 +30,13 @@ public class MainController implements Initializable {
     @FXML private TableColumn<Task, Category> categoryColumn;
 
     @FXML private Button newTaskBtn;
-
+    @FXML private Button deleteTaskBtn;
     // tasks
     private final static ObservableList<Task> tasks = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        taskTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         nameColumn.setCellValueFactory(c -> c.getValue().taskNameProperty());
         priorityColumn.setCellValueFactory(c -> c.getValue().taskPriorityProperty());
         deadlineColumn.setCellValueFactory(c -> c.getValue().taskDeadLineProperty());
@@ -47,10 +49,21 @@ public class MainController implements Initializable {
 
         tasks.add(task);
 
-
         return task;
     }
-
+    @FXML
+    public void deleteTasks(ActionEvent event) {
+        ObservableList<Task> seletedItems = taskTable.getSelectionModel().getSelectedItems();
+        
+        if (seletedItems.isEmpty()) {
+            return;
+        }
+        
+        // Create a copy of the deleted tasks for later undo or archive or whatnot
+       ObservableList<Task> copiedItems = FXCollections.observableArrayList(seletedItems);
+       taskTable.getSelectionModel().clearSelection();
+       taskTable.getItems().removeAll(copiedItems);
+    }
     @FXML
     public void newTaskInit(ActionEvent event) {
         try {
